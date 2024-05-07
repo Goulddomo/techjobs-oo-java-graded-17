@@ -8,11 +8,13 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
+    // Constructor with no arguments and assigns an increment of nextId
     public Employer() {
         id = nextId;
         nextId++;
     }
 
+    // Constructor assigns aValue to the value field
     public Employer(String value) {
         this();
         this.value = value;
