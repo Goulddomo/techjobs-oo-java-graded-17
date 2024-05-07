@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -29,5 +30,35 @@ public class JobTest {
         Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Talent"));
         Job testJob2 = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Talent"));
         assertFalse(testJob == testJob2);
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine () {
+        Job testJob = new Job();
+        assertTrue(testJob.toString().endsWith(lineSeparator()));
+        assertTrue(testJob.toString().startsWith(lineSeparator()));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData () {
+        Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Talent"));
+        assertTrue(testJob.toString().contains(testJob.getName()));
+        assertTrue(testJob.toString().contains(testJob.getEmployer().getValue()));
+        assertTrue(testJob.toString().contains(testJob.getCoreCompetency().getValue()));
+        assertTrue(testJob.toString().contains(testJob.getLocation().getValue()));
+        assertTrue(testJob.toString().contains(testJob.getPositionType().getValue()));
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField () {
+        Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency());
+        assertEquals(testJob.toString(), "System.lineSeparator() +\n" +
+                "id: + id +\n" +
+                "name: Developer \n" +
+                "employer: Google \n" +
+                "location: Desert \n" +
+                "positionType: Front-end \n" +
+                "coreCompetency: Data not available \n" +
+                "System.lineSeparator()");
     }
 }
