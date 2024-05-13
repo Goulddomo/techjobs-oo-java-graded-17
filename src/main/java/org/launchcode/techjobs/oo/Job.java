@@ -97,12 +97,30 @@ public class Job {
     @Override
     public String toString() {
         String toStringName = name;
+
         if (toStringName.isBlank()) {
             name = "Data not available";
         }
         String toStringEmployer = String.valueOf(employer);
-        if (toStringEmployer.isBlank()){
-            employer.getValue() = "Data not available";
+//        if (toStringEmployer.isBlank()){
+//            name = "Data not available";
+//            employer = "Data not available";
+//            location.getValue() = "Data not available";
+//            positionType.getValue() = "Data not available";
+//            coreCompetency.getValue() = "Data not available";
+//        }
+        String emptyMessage = "Data not available";
+        if (employer.getValue().isBlank()) {
+            employer.setValue(emptyMessage);
+        }
+        if (location.getValue().isBlank()) {
+            location.setValue(emptyMessage);
+        }
+        if (positionType.getValue().isBlank()) {
+            positionType.setValue(emptyMessage);
+        }
+        if (coreCompetency.getValue() == null) {
+            coreCompetency.setValue(emptyMessage);
         }
         return System.lineSeparator() +
                 "id:" + id +

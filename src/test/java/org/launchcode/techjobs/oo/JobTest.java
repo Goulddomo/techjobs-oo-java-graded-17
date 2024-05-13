@@ -52,13 +52,17 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField () {
         Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency());
-        assertEquals(testJob.toString(), "System.lineSeparator() +\n" +
-                "id: + id +\n" +
-                "name: Developer \n" +
-                "employer: Google \n" +
-                "location: Desert \n" +
-                "positionType: Front-end \n" +
-                "coreCompetency: Data not available \n" +
-                "System.lineSeparator()");
+        assertEquals(testJob.toString(), System.lineSeparator() +
+                "id:1" +
+                "name: 'Developer'" +
+                "employer: Google" +
+                "location: Desert" +
+                "positionType: Front-end" +
+                "coreCompetency: Data not available");
     }
+
+//    @Test
+//    public void testJobDoesNotExist () {
+//
+//    }
 }
