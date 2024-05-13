@@ -53,11 +53,11 @@ public class JobTest {
     public void testToStringHandlesEmptyField () {
         Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency());
         assertEquals(testJob.toString(), System.lineSeparator() +
-                "id:1" +
-                "name: 'Developer'" +
-                "employer: Google" +
-                "location: Desert" +
-                "positionType: Front-end" +
+                "id: 1\n" +
+                "name: Developer\n" +
+                "employer: Google\n" +
+                "location: Desert\n" +
+                "positionType: Front-end\n" +
                 "coreCompetency: Data not available");
     }
 

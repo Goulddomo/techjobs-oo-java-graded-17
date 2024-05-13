@@ -123,13 +123,12 @@ public class Job {
             coreCompetency.setValue(emptyMessage);
         }
         return System.lineSeparator() +
-                "id:" + id +
-                "name: '" + name + '\'' +
-                "employer: " + employer +
-                "location: " + location +
-                "positionType: " + positionType +
-                "coreCompetency: " + coreCompetency +
-                System.lineSeparator();
+                "id: " + id + "\n" +
+                "name: " + name + "\n" +
+                "employer: " + employer + "\n" +
+                "location: " + location + "\n" +
+                "positionType: " + positionType + "\n" +
+                "coreCompetency: " + coreCompetency;
     }
 
 
