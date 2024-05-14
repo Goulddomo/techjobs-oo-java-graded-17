@@ -34,7 +34,7 @@ public class JobTest {
 
     @Test
     public void testToStringStartsAndEndsWithNewLine () {
-        Job testJob = new Job();
+        Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Talent"));
         assertTrue(testJob.toString().endsWith(lineSeparator()));
         assertTrue(testJob.toString().startsWith(lineSeparator()));
     }
@@ -51,15 +51,15 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField () {
-        Job testJob = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Data not available"));
-        assertEquals(testJob.toString(),
+        Job testJob4 = new Job("Developer", new Employer("Google"), new Location("Desert"), new PositionType("Front-end"), new CoreCompetency("Data not available"));
+        assertEquals(testJob4.toString(),
                 System.lineSeparator() +
-                "id: 1\n" +
-                "name: Developer\n" +
-                "employer: Google\n" +
-                "location: Desert\n" +
-                "positionType: Front-end\n" +
-                "coreCompetency: Data not available\n");
+                "ID: 3\n" +
+                "Name: Developer\n" +
+                "Employer: Google\n" +
+                "Location: Desert\n" +
+                "Position Type: Front-end\n" +
+                "Core Competency: Data not available\n");
     }
 
 //    @Test
