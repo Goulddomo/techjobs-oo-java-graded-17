@@ -38,10 +38,7 @@ public abstract class JobField {
     //    ToString
     @Override
     public String toString() {
-        return "JobField{" +
-                "id=" + id +
-                ", value='" + value + '\'' +
-                '}';
+        return value;
     }
 
 
